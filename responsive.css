@@ -1,0 +1,372 @@
+/* Shared public navbar style, matching kerajinan/pengrajin pages. */
+body > nav#navbar,
+body > nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  height: auto;
+  padding: 13px 48px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200, 146, 42, 0.18);
+  box-shadow: none;
+  transition: box-shadow 0.3s;
+}
+
+body > nav#navbar.scrolled,
+body > nav.navbar.scrolled {
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.09);
+}
+
+body > nav#navbar .nav-logo,
+body > nav#navbar .nav-brand,
+body > nav.navbar .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #5C3D1E;
+  text-decoration: none;
+}
+
+body > nav#navbar .nav-brand svg {
+  display: none;
+}
+
+body > nav#navbar .nav-logo span,
+body > nav#navbar .nav-brand span,
+body > nav.navbar .nav-logo span {
+  color: #C8922A;
+}
+
+body > nav#navbar .nav-links,
+body > nav.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body > nav#navbar .nav-links a,
+body > nav.navbar .nav-links a {
+  position: static;
+  display: inline-block;
+  text-decoration: none;
+  color: #3A2E1E;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+body > nav#navbar .nav-links a::after,
+body > nav.navbar .nav-links a::after {
+  display: none;
+}
+
+body > nav#navbar .nav-links a.active,
+body > nav#navbar .nav-links a:hover,
+body > nav.navbar .nav-links a.active,
+body > nav.navbar .nav-links a:hover {
+  color: #C8922A;
+  border-bottom-color: #C8922A;
+  font-weight: 600;
+}
+
+body > nav.navbar + .hero {
+  margin-top: 60px;
+}
+
+/* Responsive-only overrides. Desktop styles remain controlled by each page CSS. */
+@media (max-width: 960px) {
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  nav#navbar,
+  body > nav:not(.navbar) {
+    gap: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-card,
+  .scroll-indicator {
+    display: none;
+  }
+
+  .page-hero {
+    margin-top: 76px;
+  }
+
+  .featured-card,
+  .office-wrapper,
+  .footer-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .intro,
+  .artisan-wrapper,
+  .contact-cards-grid,
+  .team-grid,
+  .social-grid,
+  .faq-grid,
+  .contact-methods-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .produk-header,
+  .search-actions,
+  .panel-head,
+  .table-head {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  nav#navbar,
+  body > nav:not(.navbar) {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px 16px;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  section.hero {
+    min-height: auto;
+    padding: 116px 20px 56px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hero-btns,
+  .featured-btns,
+  .artisan-btns,
+  .cta-join-btns,
+  .produk-header-right,
+  .search-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .page-hero {
+    margin-top: 104px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .breadcrumb,
+  .event-meta,
+  .produk-footer,
+  .kat-footer,
+  .address-list li {
+    flex-wrap: wrap;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .daerah-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: thin;
+  }
+
+  .tab-btn {
+    flex: 0 0 auto;
+  }
+
+  .trending-grid,
+  .events-grid,
+  .lifestyle-grid,
+  .kategori-grid,
+  .daerah-grid,
+  .glosarium-grid,
+  .produk-grid,
+  .institusi-grid,
+  .artisans-grid,
+  .testimoni-grid,
+  .catalog-admin-grid,
+  .intro,
+  .price-grid,
+  .footer-inner,
+  .footer-grid,
+  .footer-container,
+  .form-row,
+  .office-wrapper,
+  .contact-cards-grid,
+  .team-grid,
+  .social-grid,
+  .faq-grid,
+  .contact-methods-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form {
+    border-radius: 8px;
+  }
+
+  .featured-img img {
+    min-height: 240px;
+  }
+
+  .wide-image img,
+  .office-image img {
+    height: 240px;
+  }
+
+  .intro-image {
+    order: -1;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 520px) {
+  nav#navbar,
+  body > nav:not(.navbar) {
+    justify-content: flex-start;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .navbar .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  section.hero {
+    padding-top: 132px;
+  }
+
+  .hero-title,
+  .page-hero h1,
+  .page-hero-inner h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .hero-btns .btn,
+  .featured-btns .btn,
+  .artisan-btns .btn,
+  .cta-join-btns .btn,
+  .produk-header-right .btn,
+  .search-actions .btn,
+  .btn-card,
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box,
+  .form-wrapper,
+  .office-wrapper,
+  .hero-panel,
+  .login-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .footer-brand p,
+  .footer-tagline {
+    max-width: none;
+  }
+
+  .login-visual {
+    min-height: 280px;
+    padding: 28px 20px;
+  }
+
+  .login-panel {
+    padding: 18px;
+  }
+}
