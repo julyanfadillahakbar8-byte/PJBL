@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Master Pengrajin Nusantara – KaryaNusa</title>
+<title>Master Perajin Nusantara – KaryaNusa</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="pengrajin.css"/>
 <link rel="stylesheet" href="public-data.css"/>
@@ -14,7 +14,7 @@
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
-  <a href="landing.php" class="nav-logo">
+  <a href="index.php" class="nav-logo">
       <circle cx="14" cy="14" r="13" stroke="#C8922A" stroke-width="2"/>
       <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#C8922A" stroke-width="2" stroke-linecap="round"/>
       <circle cx="14" cy="14" r="3" fill="#C8922A"/>
@@ -22,9 +22,9 @@
     Karya<span>Nusa</span>
   </a>
   <ul class="nav-links">
-    <li><a href="landing.php">Beranda</a></li>
+    <li><a href="index.php">Beranda</a></li>
     <li><a href="kerajinan.php">Kerajinan</a></li>
-    <li><a href="pengrajin.php" class="active">Pengrajin</a></li>
+    <li><a href="pengrajin.php" class="active">Perajin</a></li>
     <li><a href="kontak.php">Kontak</a></li>
   </ul>
 </nav>
@@ -32,7 +32,7 @@
 <!-- ===== PAGE HERO ===== -->
 <div class="page-hero">
   <div class="container">
-    <h1 class="reveal">Master Pengrajin <span>Nusantara</span></h1>
+    <h1 class="reveal">Master Perajin <span>Nusantara</span></h1>
     <p class="reveal" style="transition-delay:.08s">
       Temui para penjaga warisan budaya Indonesia yang telah mengabdikan hidup mereka untuk melestarikan
       teknik tradisional dan menciptakan karya seni yang mendunian
@@ -45,8 +45,8 @@
 <section class="featured-section">
   <div class="container">
     <div class="section-header reveal">
-      <h2>Pengrajin Unggulan Bulan Ini</h2>
-      <p>Menampilkan master pengrajin dengan dedikasi luar biasa dalam melestarikan budaya</p>
+      <h2>Perajin Unggulan Bulan Ini</h2>
+      <p>Menampilkan master perajin dengan dedikasi luar biasa dalam melestarikan budaya</p>
     </div>
     <div class="featured-card reveal">
       <div class="featured-img">
@@ -71,7 +71,7 @@
             <path d="M22 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1"/>
             <path d="M2 15s1-2 4-2 4 2 4 2"/>
           </svg>
-          Pengrajin Batik Tulis Yogyakarta
+          Perajin Batik Tulis Yogyakarta
         </div>
         <div class="featured-location">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
@@ -119,8 +119,8 @@
 <section class="artisans-section">
   <div class="container">
     <div class="section-header reveal">
-      <h2>Semua Master Pengrajin</h2>
-      <p>Jelajahi profil lengkap para pengrajin terbaik dari seluruh Nusantara</p>
+      <h2>Semua Master Perajin</h2>
+      <p>Jelajahi profil lengkap para perajin terbaik dari seluruh Nusantara</p>
     </div>
     <div class="artisans-grid" id="artisansGrid">
 
@@ -272,7 +272,7 @@
             </svg>
             Celuk, Bali &nbsp;•&nbsp; 32+ Tahun
           </div>
-          <p>Pengrajin perhiasan perak dengan teknik granulasi dan filigri yang menciptakan desain elegan dengan sentuhan motif klasik Bali.</p>
+          <p>Perajin perhiasan perak dengan teknik granulasi dan filigri yang menciptakan desain elegan dengan sentuhan motif klasik Bali.</p>
           <div class="artisan-card-footer">
             <div class="artisan-stars">★★★★☆ <span>4.3</span></div>
             <div class="artisan-price">Mulai <strong>Rp 610.000</strong></div>
@@ -283,7 +283,7 @@
     </div><!-- /artisans-grid -->
 
     <div class="load-more-wrap reveal">
-      <a href="#" class="btn btn-gold btn-lg" onclick="loadMore(event)">Muat Lebih Banyak Pengrajin</a>
+      <a href="pengrajin.php" class="btn btn-gold btn-lg" onclick="loadMore(event)">Muat Lebih Banyak Perajin</a>
     </div>
   </div>
 </section>
@@ -293,7 +293,7 @@
   <div class="container">
     <div class="section-header reveal">
       <h2>Testimoni Pelanggan</h2>
-      <p>Pengalaman berkesan dari para kolektor yang telah berinteraksi langsung dengan pengrajin kami</p>
+      <p>Pengalaman berkesan dari para kolektor yang telah berinteraksi langsung dengan perajin kami</p>
     </div>
     <div class="testimoni-grid">
       <div class="testi-card reveal reveal-delay-1">
@@ -305,7 +305,7 @@
           </div>
         </div>
         <div class="testi-stars">★★★★★</div>
-        <p>Pak Slamet tidak hanya seorang pengrajin, tapi juga guru yang sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan!</p>
+        <p>Pak Slamet tidak hanya seorang perajin, tapi juga guru yang sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan!</p>
       </div>
       <div class="testi-card reveal reveal-delay-2">
         <div class="testi-user">
@@ -336,10 +336,10 @@
 <!-- ===== CTA JOIN ===== -->
 <div class="cta-join">
   <div class="container">
-    <h2>Ingin Menjadi Bagian Komunitas Pengrajin?</h2>
+    <h2>Ingin Menjadi Bagian Komunitas Perajin?</h2>
     <p>Bergabunglah dengan platform KaryaNusa dan terhubung dengan kolektor seni dari seluruh dunia</p>
     <div class="cta-join-btns">
-      <a href="kontak.php" class="btn btn-gold btn-lg">Daftar Sebagai Pengrajin</a>
+      <a href="kontak.php" class="btn btn-gold btn-lg">Daftar Sebagai Perajin</a>
       <a href="kerajinan.php" class="btn btn-outline-gold btn-lg"
          style="border-color:rgba(255,255,255,0.5);color:#fff;">Jelajahi Kerajinan</a>
     </div>
@@ -351,7 +351,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="nav-logo" style="color:#fff;">
+        <a href="index.php" class="nav-logo" style="color:#fff;">
           Karya<span>Nusa</span>
         </a>
         <p>Platform digital yang menghubungkan warisan budaya Indonesia dengan dunia modern, melestarikan tradisi melalui teknologi.</p>
@@ -364,19 +364,19 @@
       <div class="footer-col">
         <h5>Navigasi</h5>
         <ul>
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Kerajinan</a></li>
-          <li><a href="#">Pengrajin</a></li>
-          <li><a href="#">Detail Produk</a></li>
+          <li><a href="index.php">Beranda</a></li>
+          <li><a href="kerajinan.php">Kerajinan</a></li>
+          <li><a href="pengrajin.php">Perajin</a></li>
+          <li><a href="kerajinan.php">Detail Produk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Kontak</h5>
         <ul>
-          <li><a href="#">Hubungi Kami</a></li>
-          <li><a href="#">Bantuan</a></li>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Syarat &amp; Ketentuan</a></li>
+          <li><a href="kontak.php">Hubungi Kami</a></li>
+          <li><a href="kontak.php">Bantuan</a></li>
+          <li><a href="kontak.php">Kebijakan Privasi</a></li>
+          <li><a href="kontak.php">Syarat &amp; Ketentuan</a></li>
         </ul>
       </div>
     </div>
@@ -428,7 +428,7 @@ function loadMore(e) {
   btn.textContent = 'Memuat…';
   btn.style.opacity = '0.7';
   setTimeout(() => {
-    btn.textContent = 'Semua Pengrajin Ditampilkan';
+    btn.textContent = 'Semua Perajin Ditampilkan';
     btn.style.background = 'var(--muted)';
     btn.style.cursor = 'default';
     btn.onclick = null;

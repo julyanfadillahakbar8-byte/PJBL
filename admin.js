@@ -23,7 +23,7 @@ const seedData = {
   ulasan: [
     { id: 1, nama: 'Chika', foto: '', gambar_produk: '', produk: 'Karpet Motif Nusantara', halaman: 'Beranda', rating: '5', komentar: 'Kualitas bagus dan motifnya terlihat premium.', status: 'Disetujui' },
     { id: 2, nama: 'Michael Robinson', foto: '', gambar_produk: '', produk: 'Celurit Baja', halaman: 'Beranda', rating: '4', komentar: 'Detail tradisionalnya kuat dan rapi.', status: 'Menunggu' },
-    { id: 3, nama: 'Sarah Chen', foto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', gambar_produk: '', produk: 'Batik Tulis Yogyakarta', halaman: 'Pengrajin', rating: '5', komentar: 'Pengrajin sangat sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan.', status: 'Disetujui' },
+    { id: 3, nama: 'Sarah Chen', foto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', gambar_produk: '', produk: 'Batik Tulis Yogyakarta', halaman: 'Perajin', rating: '5', komentar: 'Perajin sangat sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan.', status: 'Disetujui' },
     { id: 4, nama: 'Rina Wijaya', foto: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80', gambar_produk: '', produk: 'Komunitas KaryaNusa', halaman: 'Kontak', rating: '5', komentar: 'Informasi mengenai kerajinan Nusantara dikemas modern dan menarik bagi anak muda.', status: 'Disetujui' }
   ],
   event: [
@@ -39,7 +39,7 @@ let activeSection = 'overview';
 const sectionTitles = {
   overview: 'Kelola Katalog Kerajinan Nusantara',
   kerajinan: 'Manajemen Data Kerajinan',
-  pengrajin: 'Manajemen Data Pengrajin',
+  pengrajin: 'Manajemen Data Perajin',
   katalog: 'Manajemen Katalog Budaya',
   ulasan: 'Moderasi Ulasan Pengunjung',
   event: 'Manajemen Event Budaya',
@@ -61,6 +61,11 @@ function safe(text) {
     '"': '&quot;',
     "'": '&#039;'
   }[char]));
+}
+
+function displayValue(key, value) {
+  if (key === 'halaman' && String(value).toLowerCase() === 'pengrajin') return 'Perajin';
+  return value;
 }
 
 async function apiRequest(payload = null) {
@@ -153,7 +158,7 @@ function renderCraftArtisanOptions(selectedValue = '') {
 
   const current = selectedValue || select.value;
   const artisans = [...(data.pengrajin || [])].sort((a, b) => String(a.nama || '').localeCompare(String(b.nama || ''), 'id'));
-  const options = ['<option value="">Pilih pengrajin</option>']
+  const options = ['<option value="">Pilih perajin</option>']
     .concat(artisans.map(item => `<option value="${safe(item.nama)}">${safe(item.nama)} - ${safe(item.daerah || item.keahlian || '')}</option>`));
 
   if (current && !artisans.some(item => String(item.nama) === String(current))) {
@@ -179,7 +184,7 @@ function rowCells(type, item) {
     kerajinan: `<td><strong>${safe(item.nama)}</strong></td><td>${safe(item.kategori)}</td><td>${safe(item.pengrajin)}</td><td>${safe(item.daerah)}</td><td>${safe(item.harga)}</td><td>${badge(item.status)}</td>`,
     pengrajin: `<td><strong>${safe(item.nama)}</strong></td><td>${safe(item.keahlian)}</td><td>${safe(item.daerah)}</td><td>${safe(item.pengalaman)}</td><td>${safe(item.kontak)}</td><td>${badge(item.status)}</td>`,
     katalog: `<td>${catalogImage}</td><td><strong>${safe(item.judul)}</strong><br><span class="muted-cell">${safe(item.penulis)}</span></td><td>${safe(item.kategori)}</td><td>${safe(item.halaman || '-')}</td><td>${formatDate(item.tanggal)}</td><td>${badge(item.status)}</td>`,
-    ulasan: `<td>${reviewPhoto}</td><td><strong>${safe(item.nama)}</strong></td><td>${reviewProductImage}</td><td>${safe(item.produk)}</td><td>${safe(item.halaman || 'Beranda')}</td><td>${stars}</td><td>${safe(item.komentar)}</td><td>${badge(item.status)}</td>`,
+    ulasan: `<td>${reviewPhoto}</td><td><strong>${safe(item.nama)}</strong></td><td>${reviewProductImage}</td><td>${safe(item.produk)}</td><td>${safe(displayValue('halaman', item.halaman || 'Beranda'))}</td><td>${stars}</td><td>${safe(item.komentar)}</td><td>${badge(item.status)}</td>`,
     event: `<td><strong>${safe(item.nama)}</strong></td><td>${safe(item.jenis)}</td><td>${safe(item.lokasi)}</td><td>${formatDate(item.tanggal)}</td><td>${safe(item.biaya)}</td><td>${badge(item.status)}</td>`,
     pesan: `<td><strong>${safe(item.nama)}</strong></td><td>${safe(item.email)}</td><td>${safe(item.telepon || '-')}</td><td>${safe(item.instansi)}</td><td>${safe(item.subjek)}</td><td>${formatDate(item.created_at)}</td>`
   };
@@ -196,7 +201,7 @@ function renderOverview() {
 
   const activities = [
     ['Kerajinan terbaru', data.kerajinan.at(-1)?.nama || 'Belum ada data', 'Produk siap ditampilkan di katalog.'],
-    ['Pengrajin terbaru', data.pengrajin.at(-1)?.nama || 'Belum ada data', 'Profil bisa dihubungkan ke produk.'],
+    ['Perajin terbaru', data.pengrajin.at(-1)?.nama || 'Belum ada data', 'Profil bisa dihubungkan ke produk.'],
     ['Ulasan terakhir', data.ulasan.at(-1)?.produk || 'Belum ada data', 'Periksa status moderasi ulasan.'],
     ['Pesan kontak', data.pesan[0]?.subjek || 'Belum ada pesan', 'Kotak masuk dari halaman kontak.']
   ];
@@ -247,11 +252,11 @@ function viewMessage(id) {
 function detailFields(type) {
   return {
     kerajinan: [
-      ['Nama Kerajinan', 'nama'], ['Kategori', 'kategori'], ['Pengrajin', 'pengrajin'],
+      ['Nama Kerajinan', 'nama'], ['Kategori', 'kategori'], ['Perajin', 'pengrajin'],
       ['Daerah', 'daerah'], ['Harga', 'harga'], ['Stok', 'stok'], ['Status', 'status'], ['Gambar', 'gambar', 'image']
     ],
     pengrajin: [
-      ['Nama Pengrajin', 'nama'], ['Keahlian', 'keahlian'], ['Daerah', 'daerah'],
+      ['Nama Perajin', 'nama'], ['Keahlian', 'keahlian'], ['Daerah', 'daerah'],
       ['Pengalaman', 'pengalaman'], ['Kontak', 'kontak'], ['Status', 'status'], ['Foto', 'foto', 'image']
     ],
     katalog: [
@@ -286,7 +291,7 @@ function viewItem(type, id) {
     const value = item[key] ?? '';
     const rendered = kind === 'image' && value
       ? `<img class="detail-image" src="${safe(value)}" alt="${safe(label)}">`
-      : `<span>${safe(kind === 'date' ? formatDate(value) : value || '-')}</span>`;
+      : `<span>${safe(kind === 'date' ? formatDate(value) : displayValue(key, value || '-'))}</span>`;
     return `<div class="detail-row"><strong>${safe(label)}</strong>${rendered}</div>`;
   }).join('');
 
@@ -373,7 +378,7 @@ async function handleSubmit(event) {
       formData.foto = data[type][index].foto || form.elements.foto.value || '';
     }
     if (!formData.foto) {
-      showToast('Pilih foto profil pengrajin terlebih dahulu');
+      showToast('Pilih foto profil perajin terlebih dahulu');
       return;
     }
   }

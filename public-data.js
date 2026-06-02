@@ -14,7 +14,7 @@
     katalog: [],
     ulasan: [
       { id: 1, nama: 'Chika', foto: '', gambar_produk: '', produk: 'Karpet Motif Nusantara', halaman: 'Beranda', rating: '5', komentar: 'Kualitas bagus dan motifnya terlihat premium.', status: 'Disetujui' },
-      { id: 3, nama: 'Sarah Chen', foto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', gambar_produk: '', produk: 'Batik Tulis Yogyakarta', halaman: 'Pengrajin', rating: '5', komentar: 'Pengrajin sangat sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan.', status: 'Disetujui' },
+      { id: 3, nama: 'Sarah Chen', foto: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80', gambar_produk: '', produk: 'Batik Tulis Yogyakarta', halaman: 'Perajin', rating: '5', komentar: 'Perajin sangat sabar menjelaskan filosofi di balik setiap motif batik. Pengalaman yang sangat berkesan.', status: 'Disetujui' },
       { id: 6, nama: 'Rina Wijaya', foto: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=80&h=80', gambar_produk: '', produk: 'Komunitas KaryaNusa', halaman: 'Kontak', rating: '5', komentar: 'Informasi mengenai kerajinan Nusantara dikemas modern dan menarik bagi anak muda.', status: 'Disetujui' }
     ],
     event: []
@@ -62,6 +62,10 @@
     }[char]));
   }
 
+  function displayText(text) {
+    return String(text || '').replace(/\bPengrajin\b/g, 'Perajin').replace(/\bpengrajin\b/g, 'perajin');
+  }
+
   function imageFor(item) {
     if (item.gambar) return item.gambar;
     const key = String(item.kategori || item.keahlian || '').toLowerCase();
@@ -95,8 +99,9 @@
     return (data.ulasan || []).filter(item => {
       if (item.status !== 'Disetujui') return false;
       if (!page) return true;
-      const target = String(item.halaman || 'Beranda').toLowerCase();
-      return target === 'semua' || target === page.toLowerCase();
+      const normalizePage = value => String(value || 'Beranda').toLowerCase().replace('perajin', 'pengrajin');
+      const target = normalizePage(item.halaman);
+      return target === 'semua' || target === normalizePage(page);
     });
   }
 
@@ -181,10 +186,10 @@
               <img src="${item.foto || reviewImages[index % reviewImages.length]}" alt="${safe(item.nama)}"/>
               <div class="lifestyle-user-info">
                 <strong>${safe(item.nama)}</strong>
-                <span>${reviewStars(item.rating)} untuk ${safe(item.produk)}</span>
+                <span>${reviewStars(item.rating)} untuk ${safe(displayText(item.produk))}</span>
               </div>
             </div>
-            <p>"${safe(item.komentar)}"</p>
+            <p>"${safe(displayText(item.komentar))}"</p>
           </div>
         </div>
       `).join('') || emptyCard('Belum ada ulasan yang disetujui admin.');
@@ -237,7 +242,7 @@
         </div>
         <div class="artisan-card-body">
           <div class="artisan-meta"><i class="fas fa-palette"></i> ${safe(item.keahlian)}</div>
-          <p>Pengrajin ${safe(item.keahlian).toLowerCase()} dari ${safe(item.daerah)} dengan pengalaman ${safe(item.pengalaman)}.</p>
+          <p>Perajin ${safe(item.keahlian).toLowerCase()} dari ${safe(item.daerah)} dengan pengalaman ${safe(item.pengalaman)}.</p>
           <div class="artisan-meta"><i class="fas fa-phone"></i> ${safe(item.kontak)}</div>
           <div class="artisan-meta"><i class="fas fa-certificate"></i> ${safe(item.status)}</div>
           <div class="artisan-card-footer">
@@ -246,21 +251,21 @@
           </div>
         </div>
       </div>
-    `).join('') || emptyCard('Belum ada pengrajin terverifikasi dari admin.');
+    `).join('') || emptyCard('Belum ada perajin terverifikasi dari admin.');
     const testimonials = document.querySelector('.testimoni-grid');
     if (testimonials && data.ulasan) {
-      const reviews = approvedReviews(data, 'Pengrajin').slice(0, 3);
+      const reviews = approvedReviews(data, 'Perajin').slice(0, 3);
       testimonials.innerHTML = reviews.map((item, index) => `
         <div class="testi-card reveal reveal-delay-${(index % 3) + 1}">
           <div class="testi-user">
             <img src="${item.foto || reviewImages[index % reviewImages.length]}" alt="${safe(item.nama)}"/>
             <div class="testi-user-info">
               <strong>${safe(item.nama)}</strong>
-              <span>${safe(item.produk)}</span>
+              <span>${safe(displayText(item.produk))}</span>
             </div>
           </div>
           <div class="testi-stars">${reviewStars(item.rating)}</div>
-          <p>${safe(item.komentar)}</p>
+          <p>${safe(displayText(item.komentar))}</p>
         </div>
       `).join('') || emptyCard('Belum ada ulasan yang disetujui admin.');
     }
@@ -273,12 +278,12 @@
     const reviews = approvedReviews(data, 'Kontak').slice(0, 3);
     testimonials.innerHTML = reviews.map((item, index) => `
       <div class="testimonial-card">
-        <p class="quote">"${safe(item.komentar)}"</p>
+        <p class="quote">"${safe(displayText(item.komentar))}"</p>
         <div class="user-info">
           <img src="${item.foto || reviewImages[index % reviewImages.length]}" alt="${safe(item.nama)}">
           <div>
             <h4>${safe(item.nama)}</h4>
-            <span>${reviewStars(item.rating)} - ${safe(item.produk)}</span>
+            <span>${reviewStars(item.rating)} - ${safe(displayText(item.produk))}</span>
           </div>
         </div>
       </div>

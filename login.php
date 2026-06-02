@@ -52,11 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <main class="login-page">
     <section class="login-visual">
-      <a href="landing.php" class="brand">Karya<span>Nusa</span></a>
+      <a href="index.php" class="brand">Karya<span>Nusa</span></a>
       <div>
         <p class="eyebrow">Area Admin</p>
         <h1>Masuk untuk mengelola katalog kerajinan Nusantara.</h1>
-        <p>Dashboard hanya dapat diakses oleh admin yang sudah login melalui session PHP.</p>
       </div>
     </section>
 
@@ -73,13 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
 
         <label>Username
-          <input type="text" name="username" autocomplete="username" required placeholder="admin"/>
+          <input type="text" name="username" autocomplete="username" required placeholder="username"/>
         </label>
         <label>Password
-          <input type="password" name="password" autocomplete="current-password" required placeholder="admin123"/>
+          <input type="password" name="password" autocomplete="current-password" required placeholder="masukkan password"/>
         </label>
         <button type="submit"><i class="fas fa-right-to-bracket"></i> Masuk Dashboard</button>
-        <a href="landing.php" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke website</a>
+        <a href="index.php" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke website</a>
       </form>
     </section>
   </main>

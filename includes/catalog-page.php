@@ -14,7 +14,7 @@ $fallbackCatalogs = [
     5 => ['judul' => 'Kerajinan Kayu', 'kategori' => 'Kayu', 'ringkasan' => 'Ukiran, pahatan, dan produk kayu bernilai seni dari Nusantara.', 'penjelasan' => 'Kerajinan kayu dibuat melalui pemilihan bahan, pemahatan, penghalusan, dan finishing. Penjelasan katalog berfokus pada nilai estetika, fungsi pakai, serta makna motif dalam karya kayu tradisional.', 'gambar' => 'asset/kayu.webp'],
     6 => ['judul' => 'Keramik dan Gerabah', 'kategori' => 'Gerabah', 'ringkasan' => 'Produk tanah liat yang dibentuk, dikeringkan, dan dibakar.', 'penjelasan' => 'Keramik dan gerabah memiliki fungsi sebagai wadah, alat saji, hiasan, dan media ekspresi budaya. Katalog ini menerangkan perbedaan bahan, suhu pembakaran, serta contoh produk yang umum ditemukan.', 'gambar' => 'asset/gerabah.webp'],
     7 => ['judul' => 'Perhiasan Tradisional', 'kategori' => 'Perhiasan', 'ringkasan' => 'Aksesori adat yang mencerminkan status, identitas, dan simbol budaya.', 'penjelasan' => 'Perhiasan tradisional hadir dalam bentuk gelang, kalung, hiasan kepala, dan aksesori upacara. Katalog ini membahas bahan, motif, fungsi sosial, serta nilai sejarahnya.', 'gambar' => 'asset/perhiasan.webp'],
-    8 => ['judul' => 'Anyaman Nusantara', 'kategori' => 'Anyaman', 'ringkasan' => 'Anyaman bambu, rotan, pandan, dan serat alam yang fungsional.', 'penjelasan' => 'Anyaman dibuat dengan teknik menyilangkan bahan lentur menjadi bentuk kuat dan bermanfaat. Katalog ini menjelaskan bahan, pola anyaman, fungsi produk, serta nilai ekonomi bagi pengrajin lokal.', 'gambar' => 'asset/anyaman.webp'],
+    8 => ['judul' => 'Anyaman Nusantara', 'kategori' => 'Anyaman', 'ringkasan' => 'Anyaman bambu, rotan, pandan, dan serat alam yang fungsional.', 'penjelasan' => 'Anyaman dibuat dengan teknik menyilangkan bahan lentur menjadi bentuk kuat dan bermanfaat. Katalog ini menjelaskan bahan, pola anyaman, fungsi produk, serta nilai ekonomi bagi perajin lokal.', 'gambar' => 'asset/anyaman.webp'],
     9 => ['judul' => 'Seni Logam', 'kategori' => 'Logam', 'ringkasan' => 'Karya kriya logam dengan teknik ukir, tempa, cor, dan patri.', 'penjelasan' => 'Seni logam menghasilkan benda pakai dan hiasan dari besi, baja, tembaga, perak, atau kuningan. Katalog ini membahas teknik pengolahan, fungsi, serta nilai artistik logam tradisional.', 'gambar' => 'asset/logam.webp'],
 ];
 
@@ -33,7 +33,8 @@ try {
 
 function h(?string $value): string
 {
-    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+    $text = str_replace(['Pengrajin', 'pengrajin'], ['Perajin', 'perajin'], (string) $value);
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
 
 $paragraphs = preg_split('/\R{2,}/', trim((string) ($catalog['penjelasan'] ?? ''))) ?: [];
@@ -84,11 +85,11 @@ if (!$isPublished && !$isAdmin) {
 <div id="progress-bar"></div>
 
 <nav id="navbar">
-  <a href="landing.php" class="nav-brand">Karya<span>Nusa</span></a>
+  <a href="index.php" class="nav-brand">Karya<span>Nusa</span></a>
   <ul class="nav-links">
-    <li><a href="landing.php">Beranda</a></li>
+    <li><a href="index.php">Beranda</a></li>
     <li><a href="kerajinan.php" class="active">Kerajinan</a></li>
-    <li><a href="pengrajin.php">Pengrajin</a></li>
+    <li><a href="pengrajin.php">Perajin</a></li>
     <li><a href="kontak.php">Kontak</a></li>
   </ul>
 </nav>
@@ -96,7 +97,7 @@ if (!$isPublished && !$isAdmin) {
 <section class="catalog-heading">
   <div class="catalog-wrap">
     <div class="breadcrumb">
-      <a href="landing.php">Beranda</a>
+      <a href="index.php">Beranda</a>
       <i class="fas fa-chevron-right"></i>
       <a href="kerajinan.php">Kerajinan</a>
       <i class="fas fa-chevron-right"></i>
@@ -153,12 +154,12 @@ if (!$isPublished && !$isAdmin) {
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="landing.php" class="nav-logo" style="color:#fff;">Karya<span>Nusa</span></a>
+        <a href="index.php" class="nav-logo" style="color:#fff;">Karya<span>Nusa</span></a>
         <p>Platform digital yang menghubungkan warisan budaya Indonesia dengan dunia modern, melestarikan tradisi melalui teknologi.</p>
       </div>
       <div class="footer-col">
         <h5>Navigasi</h5>
-        <ul><li><a href="landing.php">Beranda</a></li><li><a href="kerajinan.php">Kerajinan</a></li><li><a href="pengrajin.php">Pengrajin</a></li></ul>
+        <ul><li><a href="index.php">Beranda</a></li><li><a href="kerajinan.php">Kerajinan</a></li><li><a href="pengrajin.php">Perajin</a></li></ul>
       </div>
       <div class="footer-col">
         <h5>Kontak</h5>

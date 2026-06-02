@@ -15,13 +15,13 @@ require_admin();
 </head>
 <body>
   <aside class="sidebar" id="sidebar">
-    <a href="landing.php" class="brand">
+    <a href="index.php" class="brand">
       <span>Karya<span>Nusa</span></span>
     </a>
     <nav class="admin-nav" aria-label="Navigasi admin">
       <button class="nav-item active" data-section="overview"><i class="fas fa-chart-line"></i><span>Ringkasan</span></button>
       <button class="nav-item" data-section="kerajinan"><i class="fas fa-box-open"></i><span>Kerajinan</span></button>
-      <button class="nav-item" data-section="pengrajin"><i class="fas fa-user-tie"></i><span>Pengrajin</span></button>
+      <button class="nav-item" data-section="pengrajin"><i class="fas fa-user-tie"></i><span>Perajin</span></button>
       <button class="nav-item" data-section="katalog"><i class="fas fa-layer-group"></i><span>Katalog</span></button>
       <button class="nav-item" data-section="ulasan"><i class="fas fa-star-half-stroke"></i><span>Ulasan</span></button>
       <button class="nav-item" data-section="event"><i class="fas fa-calendar-days"></i><span>Event Budaya</span></button>
@@ -29,7 +29,7 @@ require_admin();
     </nav>
     <div class="sidebar-footer">
       <p>Mode admin katalog</p>
-      <a href="landing.php"><i class="fas fa-arrow-left"></i> Kembali ke website</a>
+      <a href="index.php"><i class="fas fa-arrow-left"></i> Kembali ke website</a>
       <a href="logout.php"><i class="fas fa-right-from-bracket"></i> Logout</a>
     </div>
   </aside>
@@ -46,7 +46,6 @@ require_admin();
           <i class="fas fa-magnifying-glass"></i>
           <input type="search" id="globalSearch" placeholder="Cari data admin..."/>
         </div>
-        <button class="icon-btn" aria-label="Notifikasi"><i class="fas fa-bell"></i><span class="dot"></span></button>
         <div class="admin-profile">
           <span>Admin</span>
           <strong><?= htmlspecialchars(current_admin_name(), ENT_QUOTES, 'UTF-8') ?></strong>
@@ -58,7 +57,7 @@ require_admin();
       <div class="hero-panel">
         <div>
           <p class="eyebrow">Pusat Kontrol</p>
-          <h2>Kurasi kerajinan, pengrajin, katalog, ulasan, dan event budaya dari satu tempat.</h2>
+          <h2>Kurasi kerajinan, perajin, katalog, ulasan, dan event budaya dari satu tempat.</h2>
           <p>Dashboard ini cocok untuk website katalog kerajinan tangan Nusantara: admin dapat memantau produk aktif, stok, rating, artikel katalog, dan agenda budaya.</p>
         </div>
         <button class="btn primary quick-add" data-target="kerajinan"><i class="fas fa-plus"></i> Tambah Kerajinan</button>
@@ -66,7 +65,7 @@ require_admin();
 
       <div class="stats-grid">
         <article class="stat-card"><i class="fas fa-box-open"></i><span id="statKerajinan">0</span><p>Kerajinan aktif</p></article>
-        <article class="stat-card"><i class="fas fa-user-tie"></i><span id="statPengrajin">0</span><p>Pengrajin terdaftar</p></article>
+        <article class="stat-card"><i class="fas fa-user-tie"></i><span id="statPengrajin">0</span><p>Perajin terdaftar</p></article>
         <article class="stat-card"><i class="fas fa-layer-group"></i><span id="statKatalog">0</span><p>Katalog budaya</p></article>
         <article class="stat-card"><i class="fas fa-star"></i><span id="statRating">0</span><p>Rata-rata rating</p></article>
       </div>
@@ -109,7 +108,7 @@ require_admin();
           <label>Nama Kerajinan<input name="nama" required placeholder="Contoh: Kain Songket Lepus"/></label>
           <label>Gambar Produk<input name="gambarFile" type="file" accept="image/*"/></label>
           <label>Kategori<select name="kategori" required><option>Tekstil</option><option>Kayu</option><option>Gerabah</option><option>Perhiasan</option><option>Anyaman</option><option>Logam</option></select></label>
-          <label>Pengrajin<select name="pengrajin" required><option value="">Pilih pengrajin</option></select></label>
+          <label>Perajin<select name="pengrajin" required><option value="">Pilih perajin</option></select></label>
           <label>Daerah<input name="daerah" required placeholder="Contoh: Palembang"/></label>
           <label>Harga<input name="harga" required placeholder="Rp 1.250.000"/></label>
           <label>Stok<input name="stok" type="number" min="0" required placeholder="12"/></label>
@@ -121,22 +120,22 @@ require_admin();
         </form>
         <div class="table-panel">
           <div class="table-head"><h3>Daftar Kerajinan</h3><span id="countKerajinan"></span></div>
-          <div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kategori</th><th>Pengrajin</th><th>Daerah</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="tableKerajinan"></tbody></table></div>
+          <div class="table-wrap"><table><thead><tr><th>Nama</th><th>Kategori</th><th>Perajin</th><th>Daerah</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="tableKerajinan"></tbody></table></div>
         </div>
       </div>
     </section>
 
     <section class="content-section" id="pengrajin">
       <div class="section-toolbar">
-        <div><p class="eyebrow">Mitra Budaya</p><h2>Data Pengrajin</h2></div>
-        <button class="btn primary" data-open-form="pengrajin"><i class="fas fa-plus"></i> Tambah Pengrajin</button>
+        <div><p class="eyebrow">Mitra Budaya</p><h2>Data Perajin</h2></div>
+        <button class="btn primary" data-open-form="pengrajin"><i class="fas fa-plus"></i> Tambah Perajin</button>
       </div>
       <div class="manager-layout">
         <form class="data-form" data-form="pengrajin">
-          <h3>Form Pengrajin</h3>
+          <h3>Form Perajin</h3>
           <input type="hidden" name="id"/>
           <input type="hidden" name="foto"/>
-          <label>Nama Pengrajin<input name="nama" required placeholder="Contoh: Bu Hariyani"/></label>
+          <label>Nama Perajin<input name="nama" required placeholder="Contoh: Bu Hariyani"/></label>
           <label>Foto Profil<input name="fotoFile" type="file" accept="image/*"/></label>
           <label>Keahlian<input name="keahlian" required placeholder="Batik tulis, ukir kayu"/></label>
           <label>Daerah<input name="daerah" required placeholder="Yogyakarta"/></label>
@@ -146,7 +145,7 @@ require_admin();
           <div class="form-actions"><button type="reset" class="btn ghost">Bersihkan</button><button type="submit" class="btn primary">Simpan</button></div>
         </form>
         <div class="table-panel">
-          <div class="table-head"><h3>Daftar Pengrajin</h3><span id="countPengrajin"></span></div>
+          <div class="table-head"><h3>Daftar Perajin</h3><span id="countPengrajin"></span></div>
           <div class="table-wrap"><table><thead><tr><th>Nama</th><th>Keahlian</th><th>Daerah</th><th>Pengalaman</th><th>Kontak</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="tablePengrajin"></tbody></table></div>
         </div>
       </div>
@@ -194,7 +193,7 @@ require_admin();
           <label>Nama Pengulas<input name="nama" required placeholder="Nama pelanggan"/></label>
           <label>Foto Pengulas<input name="fotoFile" type="file" accept="image/*"/></label>
           <label>Produk<input name="produk" required placeholder="Nama kerajinan"/></label>
-          <label>Halaman<select name="halaman"><option>Beranda</option><option>Pengrajin</option><option>Kontak</option><option>Semua</option></select></label>
+          <label>Halaman<select name="halaman"><option>Beranda</option><option>Perajin</option><option>Kontak</option><option>Semua</option></select></label>
           <label>Gambar Produk<input name="gambarProdukFile" type="file" accept="image/*"/></label>
           <label>Rating<select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
           <label>Status<select name="status"><option>Disetujui</option><option>Menunggu</option><option>Ditolak</option></select></label>

@@ -14,14 +14,14 @@
 
 <!-- ===== NAVBAR ===== -->
 <nav id="navbar">
-  <a href="landing.php" class="nav-logo">
+  <a href="index.php" class="nav-logo">
    
     <p>Karya<span>Nusa</span></p>
   </a>
   <ul class="nav-links">
-    <li><a href="landing.php">Beranda</a></li>
+    <li><a href="index.php">Beranda</a></li>
     <li><a href="kerajinan.php" class="active">Kerajinan</a></li>
-    <li><a href="pengrajin.php">Pengrajin</a></li>
+    <li><a href="pengrajin.php">Perajin</a></li>
     <li><a href="kontak.php">Kontak</a></li>
   </ul>
 </nav>
@@ -30,7 +30,7 @@
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb">
-      <a href="landing.php">Beranda</a>
+      <a href="index.php">Beranda</a>
       <i class="fas fa-chevron-right"></i>
       <span>Kerajinan Nusantara</span>
     </div>
@@ -43,7 +43,7 @@
     <div class="stat-item"><span class="num">7+</span><span class="lbl">Kategori Utama</span></div>
     <div class="stat-item"><span class="num">34</span><span class="lbl">Provinsi</span></div>
     <div class="stat-item"><span class="num">150+</span><span class="lbl">Teknik Tradisional</span></div>
-    <div class="stat-item"><span class="num">300+</span><span class="lbl">Pengrajin</span></div>
+    <div class="stat-item"><span class="num">300+</span><span class="lbl">Perajin</span></div>
   </div>
 </div>
 
@@ -52,7 +52,7 @@
   <div class="container">
     <div class="section-header reveal">
       <h2>Kategori Kerajinan Utama</h2>
-      <p>Setiap kategori mewakili kekayaan budaya dan keahlian tangan pengrajin yang luar biasa</p>
+      <p>Setiap kategori mewakili kekayaan budaya dan keahlian tangan perajin yang luar biasa</p>
     </div>
     <div class="kategori-grid">
       <!-- Row 1 -->
@@ -212,7 +212,7 @@
       <div class="glos-card reveal reveal-delay-3">
         <div class="glos-icon"><i class="fas fa-layer-group"></i></div>
         <h4>Tenun Ikat</h4>
-        <p>Teknik menenun dengan cara mengikat benang sebelum dicelup warna sehingga menghasilkan motif yang unik dan bervariasi sesuai ikatan yang dibuat pengrajin.</p>
+        <p>Teknik menenun dengan cara mengikat benang sebelum dicelup warna sehingga menghasilkan motif yang unik dan bervariasi sesuai ikatan yang dibuat perajin.</p>
       </div>
       <div class="glos-card reveal reveal-delay-1">
         <div class="glos-icon"><i class="fas fa-fire"></i></div>
@@ -239,7 +239,7 @@
     <div class="produk-header reveal">
       <div class="produk-header-left">
         <h2>Produk Unggulan</h2>
-        <p>Karya-karya terbaik dari pengrajin terbaik Indonesia</p>
+        <p>Karya-karya terbaik dari perajin terbaik Indonesia</p>
       </div>
       <div class="produk-header-right">
         <a href="kerajinan.php" class="btn btn-outline-gold btn-sm">Sort &amp; Tampilan</a>
@@ -358,7 +358,7 @@
       <div class="institusi-card reveal reveal-delay-4">
         <div class="institusi-icon"><i class="fas fa-award"></i></div>
         <h4>Dekranasda</h4>
-        <p>Dewan Kerajinan Nasional Daerah yang membina pengrajin lokal di seluruh pelosok nusantara</p>
+        <p>Dewan Kerajinan Nasional Daerah yang membina perajin lokal di seluruh pelosok nusantara</p>
       </div>
     </div>
   </div>
@@ -370,7 +370,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="nav-logo" style="color:#fff;">
+        <a href="index.php" class="nav-logo" style="color:#fff;">
           Karya<span>Nusa</span>
         </a>
         <p>Platform digital yang menghubungkan warisan budaya Indonesia dengan dunia modern, melestarikan tradisi melalui teknologi.</p>
@@ -383,19 +383,19 @@
       <div class="footer-col">
         <h5>Navigasi</h5>
         <ul>
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Kerajinan</a></li>
-          <li><a href="#">Pengrajin</a></li>
-          <li><a href="#">Detail Produk</a></li>
+          <li><a href="index.php">Beranda</a></li>
+          <li><a href="kerajinan.php">Kerajinan</a></li>
+          <li><a href="pengrajin.php">Perajin</a></li>
+          <li><a href="kerajinan.php">Detail Produk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Kontak</h5>
         <ul>
-          <li><a href="#">Hubungi Kami</a></li>
-          <li><a href="#">Bantuan</a></li>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Syarat &amp; Ketentuan</a></li>
+          <li><a href="kontak.php">Hubungi Kami</a></li>
+          <li><a href="kontak.php">Bantuan</a></li>
+          <li><a href="kontak.php">Kebijakan Privasi</a></li>
+          <li><a href="kontak.php">Syarat &amp; Ketentuan</a></li>
         </ul>
       </div>
     </div>

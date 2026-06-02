@@ -13,7 +13,7 @@
 <body>
 
   <nav id="navbar">
-    <a href="landing.php" class="nav-logo">
+    <a href="index.php" class="nav-logo">
      
         <circle cx="14" cy="14" r="13" stroke="#C8922A" stroke-width="2"/>
         <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#C8922A" stroke-width="2" stroke-linecap="round"/>
@@ -22,9 +22,9 @@
       Karya<span>Nusa</span>
     </a>
     <ul class="nav-links">
-      <li><a href="landing.php" class="active">Beranda</a></li>
+      <li><a href="index.php" class="active">Beranda</a></li>
       <li><a href="kerajinan.php">Kerajinan</a></li>
-      <li><a href="pengrajin.php">Pengrajin</a></li>
+      <li><a href="pengrajin.php">Perajin</a></li>
       <li><a href="kontak.php">Kontak</a></li>
     </ul>
   </nav>
@@ -34,11 +34,11 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-subtitle">Pengrajin Unggulan</p>
+      <p class="hero-subtitle">Perajin Unggulan</p>
       <h1 class="hero-title">I Made <span>Sukrisnа</span><br/>Bali</h1>
       <p class="hero-desc">Karya seni autentik yang menggabungkan warisan leluhur dengan sentuhan modern. Setiap karya adalah cerita yang hidup.</p>
       <div class="hero-btns">
-        <a href="pengrajin.php" class="btn btn-gold">Lihat Profil Pengrajin</a>
+        <a href="pengrajin.php" class="btn btn-gold">Lihat Profil Perajin</a>
         <a href="kerajinan.php" class="btn btn-outline">Jelajahi Karya</a>
       </div>
     </div>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div class="trending-cta reveal">
-        <a href="#" class="btn btn-gold">Lihat Semua Kerajinan Trending</a>
+        <a href="kerajinan.php" class="btn btn-gold">Lihat Semua Kerajinan Trending</a>
       </div>
     </div>
   </section>
@@ -126,8 +126,8 @@
   <section class="artisan-section" id="artisan">
     <div class="container">
       <div class="section-header reveal">
-        <h2>Sorotan Pengrajin Bulan Ini</h2>
-        <p>Mengenal lebih dekat master pengrajin dan teknik tradisional mereka</p>
+        <h2>Sorotan Perajin Bulan Ini</h2>
+        <p>Mengenal lebih dekat master perajin dan teknik tradisional mereka</p>
       </div>
       <div class="artisan-wrapper">
         <div class="artisan-card reveal">
@@ -142,7 +142,7 @@
           <p class="artisan-quote">"Setiap titik pada kain batik adalah doa dan dedikasi. Saya tidak hanya membuat kain, saya menjaga warisan leluhur tetap hidup dan relevan untuk generasi berikutnya."</p>
           <div class="artisan-stats">
             <div class="stat"><span class="stat-num">150+</span><span class="stat-label">Karya Terjual</span></div>
-            <div class="stat"><span class="stat-num">4.9</span><span class="stat-label">Rating Pengrajin</span></div>
+            <div class="stat"><span class="stat-num">4.9</span><span class="stat-label">Rating Perajin</span></div>
           </div>
           <div class="artisan-tags">
             <div class="artisan-tag"><i class="fas fa-star"></i> Spesialisasi: Pertenunen Pelece Tradisional</div>
@@ -150,7 +150,7 @@
             <div class="artisan-tag"><i class="fas fa-certificate"></i> Warisan: Teknik Kerajinan Abad ke-16</div>
           </div>
           <div class="artisan-btns">
-            <a href="#" class="btn btn-outline" style="color:var(--gold); border-color:var(--gold);">Lihat Profil Lengkap</a>
+            <a href="pengrajin.php" class="btn btn-outline" style="color:var(--gold); border-color:var(--gold);">Lihat Profil Lengkap</a>
             <a href="kerajinan.php" class="btn btn-gold">Lihat Karya</a>
           </div>
         </div>
@@ -207,21 +207,21 @@
           </div>
           <div class="event-footer">
             <span class="event-price">Rp 350.000</span>
-            <a href="#" class="btn btn-gold btn-sm">Daftar</a>
+            <a href="kontak.php" class="btn btn-gold btn-sm">Daftar</a>
           </div>
         </div>
         <div class="event-card reveal reveal-delay-2">
           <span class="event-badge badge-festival">Festival</span>
           <p class="event-date">25–28 Oktober 2025</p>
           <h3>Festival Kerajinan Bali</h3>
-          <p>Pameran dan demo karya terbaik dari pengrajin unggulan, pematung, dan kerajinan tradisional Bali di Ubud Art Market.</p>
+          <p>Pameran dan demo karya terbaik dari perajin unggulan, pematung, dan kerajinan tradisional Bali di Ubud Art Market.</p>
           <div class="event-meta">
             <span><i class="fas fa-map-marker-alt"></i> Ubud, Bali</span>
             <span><i class="fas fa-calendar"></i> 3 Hari</span>
           </div>
           <div class="event-footer">
-            <a href="#" class="btn btn-outline btn-sm" style="color:var(--gold); border-color:var(--gold);">Info Lengkap</a>
-            <a href="#" class="btn btn-gold btn-sm">Daftar</a>
+            <a href="kontak.php" class="btn btn-outline btn-sm" style="color:var(--gold); border-color:var(--gold);">Info Lengkap</a>
+            <a href="kontak.php" class="btn btn-gold btn-sm">Daftar</a>
           </div>
         </div>
         <div class="event-card reveal reveal-delay-3">
@@ -235,12 +235,12 @@
           </div>
           <div class="event-footer">
             <span class="event-price">Rp 275.000</span>
-            <a href="#" class="btn btn-gold btn-sm">Daftar</a>
+            <a href="kontak.php" class="btn btn-gold btn-sm">Daftar</a>
           </div>
         </div>
       </div>
       <div class="calendar-cta reveal">
-        <a href="#" class="btn btn-gold">Lihat Semua Event</a>
+        <a href="kontak.php" class="btn btn-gold">Lihat Semua Event</a>
       </div>
     </div>
   </section>
@@ -307,7 +307,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="#" class="nav-logo" style="color:var(--white);">
+          <a href="index.php" class="nav-logo" style="color:var(--white);">
             
               <circle cx="14" cy="14" r="13" stroke="#C8922A" stroke-width="2"/>
               <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#C8922A" stroke-width="2" stroke-linecap="round"/>
@@ -325,19 +325,19 @@
         <div class="footer-col">
           <h5>Navigasi</h5>
           <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Kerajinan</a></li>
-            <li><a href="#">Pengrajin</a></li>
-            <li><a href="#">Detail Produk</a></li>
+            <li><a href="index.php">Beranda</a></li>
+            <li><a href="kerajinan.php">Kerajinan</a></li>
+            <li><a href="pengrajin.php">Perajin</a></li>
+            <li><a href="kerajinan.php">Detail Produk</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Kontak</h5>
           <ul>
-            <li><a href="#">Hubungi Kami</a></li>
-            <li><a href="#">Bantuan</a></li>
-            <li><a href="#">Kebijakan Privasi</a></li>
-            <li><a href="#">Syarat & Ketentuan</a></li>
+            <li><a href="kontak.php">Hubungi Kami</a></li>
+            <li><a href="kontak.php">Bantuan</a></li>
+            <li><a href="kontak.php">Kebijakan Privasi</a></li>
+            <li><a href="kontak.php">Syarat & Ketentuan</a></li>
           </ul>
         </div>
       </div>

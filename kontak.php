@@ -16,13 +16,13 @@
 <body>
 
     <nav id="navbar" class="navbar">
-            <a href="landing.php" class="nav-logo">
+            <a href="index.php" class="nav-logo">
              <p>Karya<span>Nusa</span></p>
             </a>
             <ul class="nav-links">
-                <li><a href="landing.php">Beranda</a></li>
+                <li><a href="index.php">Beranda</a></li>
                 <li><a href="kerajinan.php">Kerajinan</a></li>
-                <li><a href="pengrajin.php">Pengrajin</a></li>
+                <li><a href="pengrajin.php">Perajin</a></li>
                 <li><a href="kontak.php" class="active">Kontak</a></li>
             </ul>
     </nav>
@@ -111,8 +111,8 @@
         
         <div class="team-grid">
             <div class="team-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" alt="Tim 1" class="team-img">
-                <h3>Budi Santoso</h3>
+                <img src="asset/julyan.jpeg" alt="Tim 1" class="team-img">
+                <h3>Julyan Akbar</h3>
                 <p class="role">Chief Executive Officer</p>
                 <p class="team-desc">Fokus pada arah strategis KaryaNusa untuk melestarikan budaya di era modern.</p>
                 <div class="team-socials">
@@ -121,18 +121,8 @@
                 </div>
             </div>
             <div class="team-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Tim 2" class="team-img">
-                <h3>Siti Lestari</h3>
-                <p class="role">Head of Marketing</p>
-                <p class="team-desc">Menghubungkan komunitas lokal dan memperkenalkan produk ke pasar yang lebih luas.</p>
-                <div class="team-socials">
-                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150" alt="Tim 3" class="team-img">
-                <h3>Ahmad Jailani</h3>
+                <img src="asset/depin.jpeg" alt="Tim 3" class="team-img">
+                <h3>Devin</h3>
                 <p class="role">Lead Developer</p>
                 <p class="team-desc">Bertanggung jawab atas performa platform digital agar tetap nyaman digunakan.</p>
                 <div class="team-socials">
@@ -219,12 +209,12 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <p class="quote">"Platform ini menjadi wadah yang luar biasa bagi pengrajin lokal seperti saya untuk memperkenalkan produk tradisional ke kancah nasional."</p>
+                <p class="quote">"Platform ini menjadi wadah yang luar biasa bagi perajin lokal seperti saya untuk memperkenalkan produk tradisional ke kancah nasional."</p>
                 <div class="user-info">
                     <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=80&h=80" alt="User 2">
                     <div>
                         <h4>Gatot Subroto</h4>
-                        <span>Pengrajin Batik</span>
+                        <span>Perajin Batik</span>
                     </div>
                 </div>
             </div>
@@ -307,7 +297,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="nav-logo" style="color:#fff;">
+        <a href="index.php" class="nav-logo" style="color:#fff;">
           Karya<span>Nusa</span>
         </a>
         <p>Platform digital yang menghubungkan warisan budaya Indonesia dengan dunia modern, melestarikan tradisi melalui teknologi.</p>
@@ -320,19 +310,19 @@
       <div class="footer-col">
         <h5>Navigasi</h5>
         <ul>
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Kerajinan</a></li>
-          <li><a href="#">Pengrajin</a></li>
-          <li><a href="#">Detail Produk</a></li>
+          <li><a href="index.php">Beranda</a></li>
+          <li><a href="kerajinan.php">Kerajinan</a></li>
+          <li><a href="pengrajin.php">Perajin</a></li>
+          <li><a href="kerajinan.php">Detail Produk</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Kontak</h5>
         <ul>
-          <li><a href="#">Hubungi Kami</a></li>
-          <li><a href="#">Bantuan</a></li>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Syarat &amp; Ketentuan</a></li>
+          <li><a href="kontak.php">Hubungi Kami</a></li>
+          <li><a href="kontak.php">Bantuan</a></li>
+          <li><a href="kontak.php">Kebijakan Privasi</a></li>
+          <li><a href="kontak.php">Syarat &amp; Ketentuan</a></li>
         </ul>
       </div>
     </div>
